@@ -8,7 +8,7 @@ const ProjectSchema = new mongoose.Schema({
         enum: ['Not Started', 'In Progress', 'Completed']
     },
     clientId: { type: mongoose.Schema.Types.ObjectId, ref: 'Client' }
-
+    
 })
 
 const Project = mongoose.model('Project', ProjectSchema)
