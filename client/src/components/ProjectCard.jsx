@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 function ProjectCard({project}) {
-    console.log(project)
+  
   return (
     <Card style={{ width: '18rem',marginBottom:"10px" }}>
       <Card.Body>
