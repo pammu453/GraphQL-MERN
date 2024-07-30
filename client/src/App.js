@@ -1,9 +1,11 @@
 import { Container } from 'react-bootstrap';
-import AddClientModel from './components/AddClientModel';
-import Clients from './components/Clients';
 import Header from './components/Header';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import Projects from './components/Projects';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home';
+import ProjectDetail from './components/ProjectDetail';
+import NotFound from './pages/NotFound';
 
 const client = new ApolloClient({
   uri: 'http://localhost:5000/graphql',
@@ -14,10 +16,14 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <Container className='col gap-2'>
-        <Header />
-        <AddClientModel />
-        <Projects />
-        <Clients />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path='/projects/:id' element={<ProjectDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
       </Container>
     </ApolloProvider>
   )
