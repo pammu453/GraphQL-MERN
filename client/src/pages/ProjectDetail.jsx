@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom'
 import Loader from '../components/Loader'
 import DeleteProjectButton from '../components/DeleteProjectButton';
+import EditProjectModel from '../components/EditProjectModal';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -36,7 +37,8 @@ const ProjectDetail = () => {
                   Go back
                 </Button>
               </Link>
-              <DeleteProjectButton projectId={id}/>
+              <DeleteProjectButton projectId={id} />
+              <EditProjectModel project={project} />
             </Card.Body>
           </Card>
         </Col>
