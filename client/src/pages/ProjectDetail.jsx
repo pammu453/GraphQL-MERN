@@ -4,6 +4,7 @@ import { GET_PROJECT } from '../queries/projectQueries';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom'
 import Loader from '../components/Loader'
+import DeleteProjectButton from '../components/DeleteProjectButton';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -35,6 +36,7 @@ const ProjectDetail = () => {
                   Go back
                 </Button>
               </Link>
+              <DeleteProjectButton projectId={id}/>
             </Card.Body>
           </Card>
         </Col>
