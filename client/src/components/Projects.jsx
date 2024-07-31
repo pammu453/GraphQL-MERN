@@ -16,8 +16,8 @@ const Projects = () => {
                     <p>No clients found. Please add a new client.</p>
                     : data.projects.map((project) => {
                         return (
-                            <div style={{ display: "flex", gap: "2px", flexWrap: "wrap" }}>
-                                <ProjectCard key={project.id} project={project} />
+                            <div key={project.id} style={{ display: "flex", gap: "2px", flexWrap: "wrap" }}>
+                                <ProjectCard project={project} />
                             </div>
                         )
                     })

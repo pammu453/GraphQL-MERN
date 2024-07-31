@@ -1,4 +1,5 @@
 import AddCLientModel from "../components/AddClientModel"
+import AddProjectModel from "../components/AddProjectModel"
 import Clients from "../components/Clients"
 import Projects from "../components/Projects"
 
@@ -6,7 +7,10 @@ import Projects from "../components/Projects"
 const Home = () => {
     return (
         <>
-            <AddCLientModel />
+            <div className="d-flex">
+                <AddCLientModel />
+                <AddProjectModel />
+            </div>
             <Projects />
             <Clients />
         </>
